@@ -1,0 +1,41 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Car Rental System</title>
+</head>
+<body>
+    <header>
+        <h1>Car Rental System</h1>
+    </header>
+
+    <div class="container">
+        <div class="section">
+            <h2>Available Cars</h2>
+            <ul>
+                {% for car in cars %}
+                    <li>{{ car['name'] }} - {{ car['model'] }} - {{ car['year'] }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Rental Information</h2>
+            {% if rentals %}
+                <ul>
+                    {% for rental in rentals %}
+                        <li>{{ rental['name'] }} - {{ rental['car'] }} - {{ rental['action'] }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No current rentals.</p>
+            {% endif %}
+        </div>
+
+        <a href="{{ url_for('rental_form') }}"><button>Rent a Car</button></a>
+    </div>
+</body>
+</html>

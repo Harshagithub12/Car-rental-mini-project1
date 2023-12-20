@@ -1,0 +1,44 @@
+<!-- templates/rental_form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Rental Form</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Rental Form</h1>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for message in messages %}
+                        <div class="flash-message">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        <form method="POST" action="{{ url_for('submit_rental') }}">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="car">Select a Car:</label>
+            <select id="car" name="car" required>
+                {% for car in cars %}
+                    <option value="{{ car['name'] }}">{{ car['name'] }} - {{ car['model'] }} - {{ car['year'] }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="action">Select Action:</label>
+            <select id="action" name="action" required>
+                <option value="rent">Rent</option>
+                <option value="return">Return</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+        <a href="{{ url_for('index') }}"><button>Back to Home</button></a>
+    </div>
+</body>
+</html>

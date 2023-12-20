@@ -1,0 +1,18 @@
+[
+    {"name": "Toyota", "model": "Camry", "year": 2022},
+    {"name": "Honda", "model": "Civic", "year": 2021},
+    {"name": "Ford", "model": "Mustang", "year": 2020},
+    {"name": "Chevrolet", "model": "Malibu", "year": 2021},
+    {"name": "Nissan", "model": "Altima", "year": 2022},
+    {"name": "BMW", "model": "3 Series", "year": 2020},
+    {"name": "Mercedes-Benz", "model": "C-Class", "year": 2022},
+    {"name": "Tesla", "model": "Model 3", "year": 2023},
+    {"name": "Audi", "model": "A4", "year": 2022},
+    {"name": "Lexus", "model": "RX", "year": 2021},
+    {"name": "Hyundai", "model": "Elantra", "year": 2023},
+    {"name": "Subaru", "model": "Outback", "year": 2022},
+    {"name": "Mazda", "model": "CX-5", "year": 2021},
+    {"name": "Kia", "model": "Seltos", "year": 2023},
+    {"name": "Jaguar", "model": "F-PACE", "year": 2022},
+    {"name": "Porsche", "model": "911", "year": 2021}
+]
